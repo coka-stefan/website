@@ -88,7 +88,7 @@ self.addEventListener("message", async (e) => {
         arrowParentheses,
         bracketSpacing,
         bracketSameLine,
-        importSortingEnabled,
+        enabledAssist,
         unsafeParameterDecoratorsEnabled,
         allowComments,
         attributePosition,
@@ -110,7 +110,7 @@ self.addEventListener("message", async (e) => {
         },
 
         assist: {
-          enabled: importSortingEnabled,
+          enabled: enabledAssist,
         },
 
         javascript: {
@@ -271,10 +271,6 @@ self.addEventListener("message", async (e) => {
         formatterIr = "Can't format";
       }
 
-      const importSorting = {
-        code: "Moved to Analyzer Fixes tab",
-      };
-
       const categories: RuleCategories = [];
       if (configuration?.formatter?.enabled) {
         categories.push("syntax");
@@ -358,9 +354,6 @@ self.addEventListener("message", async (e) => {
         analysis: {
           controlFlowGraph,
           fixed: fixed.code,
-        },
-        importSorting: {
-          code: importSorting.code,
         },
       };
 

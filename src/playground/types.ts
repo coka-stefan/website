@@ -96,9 +96,6 @@ export interface BiomeOutput {
 		/** The snippet with lint fixes applied. */
 		fixed: string;
 	};
-	importSorting: {
-		code: string;
-	};
 }
 
 export const emptyBiomeOutput: BiomeOutput = {
@@ -118,9 +115,6 @@ export const emptyBiomeOutput: BiomeOutput = {
 		controlFlowGraph: "",
 		fixed: "",
 	},
-	importSorting: {
-		code: "",
-	},
 };
 
 export interface PlaygroundSettings {
@@ -139,7 +133,7 @@ export interface PlaygroundSettings {
 	lintRules: LintRules;
 	enabledLinting: boolean;
 	analyzerFixMode: FixFileMode;
-	importSortingEnabled: boolean;
+	enabledAssist: boolean;
 	unsafeParameterDecoratorsEnabled: boolean;
 	allowComments: boolean;
 }
@@ -187,7 +181,7 @@ export const defaultPlaygroundState: PlaygroundState = {
 		lintRules: LintRules.Recommended,
 		enabledLinting: true,
 		analyzerFixMode: "safeFixes",
-		importSortingEnabled: true,
+		enabledAssist: true,
 		unsafeParameterDecoratorsEnabled: true,
 		allowComments: true,
 	},
